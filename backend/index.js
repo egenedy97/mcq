@@ -4,6 +4,7 @@ const path = require('path')
 const mongoose = require('mongoose')
 const cors = require('cors')
 const app = express()
+const question = require('./routes/question');
 
 
 mongoose
@@ -20,12 +21,7 @@ mongoose
     console.log('error connection to MongoDB:', error.message)
   })
 
-  
-const publicDirectoryPath = path.join(__dirname, './view')
-
-app.use(express.static(publicDirectoryPath))
-
-app.use(cors())
+app.use('/c' , question) ;
 
 const port = process.env.PORT || 4000
 app.listen(port, () => {
