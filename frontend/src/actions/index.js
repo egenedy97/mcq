@@ -13,11 +13,11 @@ export const getQuestions =(answers)=>{
     }
 }
 
-export const getResult = (result)=>{
-    return {
-        type:"getResult" , 
-        payload:result
-    }
+export const setResult = (result)=>{
+  return{
+    type:"result" , 
+    payload:result
+  }
 }
 
 export const reset = () => {
@@ -26,11 +26,10 @@ export const reset = () => {
     };
 }; 
 
+export const addQuestion = (question)=>{
+  return{
+    type:"addQuestion",
+    payload:question
+  }
+}
 
-export const setAppState = (state) => {
-    return {
-      type: "setAppState",
-      payload: state,
-    };
-  };
-  

@@ -5,6 +5,8 @@ import App from './App/App';
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 import reducers from './reducers/index'
+import { BrowserRouter } from 'react-router-dom';
+import 'antd/dist/antd.css';
 
 const store = createStore(
   reducers,
@@ -13,10 +15,11 @@ const store = createStore(
 
 
 ReactDOM.render(
-  <React.StrictMode>
+ 
     <Provider store={store}>
-      <App />
-    </Provider>
-  </React.StrictMode>,
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>,
   document.getElementById('root')
 );
